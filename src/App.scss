@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the container take the full viewport height */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 auto;
+  }
+}
+
+.scrollable-grid {
+  flex: 1;
+  overflow: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-size, 50),
+    1fr
+  ); /* Dynamic grid size */
+  grid-template-rows: repeat(var(--grid-size, 50), 1fr); /* Dynamic grid size */
+  gap: 1px;
+  padding: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(
+      var(--grid-size, 25),
+      minmax(24px, 1fr)
+    ); /* For tablets */
+    grid-template-rows: repeat(var(--grid-size, 25), minmax(24px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(
+      var(--grid-size, 15),
+      minmax(32px, 1fr)
+    ); /* For phones */
+    grid-template-rows: repeat(var(--grid-size, 15), minmax(32px, 1fr));
+  }
+}
+
+.debounce-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  input {
+    margin-right: 10px;
+  }
+}
+
+.reset-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}

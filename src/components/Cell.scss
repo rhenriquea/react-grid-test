@@ -1,0 +1,46 @@
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 1;
+
+  /* Default size */
+  height: 30px;
+  width: 30px;
+  font-size: 0.8vw;
+
+  &:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    border-color: #bbb;
+    background-color: #f0f0f0;
+  }
+
+  &.highlight {
+    background-color: yellow;
+  }
+
+  &.fibonacci {
+    background-color: green;
+  }
+}
+
+@media (max-width: 768px) {
+  .cell {
+    height: 24px; /* Adjust cell size for tablets */
+    width: 24px;
+    font-size: 0.6rem; /* Smaller font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .cell {
+    height: 32px; /* Ensure the cells are big enough on phones */
+    width: 32px;
+    font-size: 0.8rem; /* Make font size bigger on small screens */
+  }
+}
